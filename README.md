@@ -1,67 +1,56 @@
-# Developing a Neural Network Regression Model
+Developing a Neural Network Regression Model
 
-## AIM
+AIM :
 
-To develop a neural network regression model for the given dataset.
+    To develop a neural network regression model for the given dataset
+    
+STEPS
 
-## THEORY
+STEP 1:
 
-Explain the problem statement
+      Loading the dataset
 
-## Neural Network Model
+STEP 2:
 
-Include the neural network model diagram.
+      Split the dataset into training and testing
 
-## DESIGN STEPS
+STEP 3:
 
-### STEP 1:
+      Create MinMaxScalar objects ,fit the model and transform the data.
 
-Loading the dataset
+STEP 4:
 
-### STEP 2:
+      Build the Neural Network Model and compile the model.
 
-Split the dataset into training and testing
+STEP 5:
 
-### STEP 3:
+      Train the model with the training data.
 
-Create MinMaxScalar objects ,fit the model and transform the data.
+STEP 6:
 
-### STEP 4:
+      Plot the performance plot
 
-Build the Neural Network Model and compile the model.
+STEP 7:
 
-### STEP 5:
+      Evaluate the model with the testing data.
 
-Train the model with the training data.
+PROGRAM
+rom google.colab import auth
+import gspread
+from google.auth import default
+import pandas as pd
+auth.authenticate_user()
+creds, _ = default()
+gc = gspread.authorize(creds)
+worksheet = gc.open('myfrenz').sheet1
+rows = worksheet.get_all_values()
+df = pd.DataFrame(rows[1:], columns=rows[0])
+df = df.astype({'regno':'float'})
 
-### STEP 6:
+Output:
+        recent:///159a3a683eaa323f7b3f0654632ef38f
 
-Plot the performance plot
+RESULT:
+A neural network regression model for the given dataset is verified
 
-### STEP 7:
 
-Evaluate the model with the testing data.
-
-## PROGRAM
-
-Include your code here
-
-## Dataset Information
-
-Include screenshot of the dataset
-
-## OUTPUT
-
-### Training Loss Vs Iteration Plot
-
-Include your plot here
-
-### Test Data Root Mean Squared Error
-
-Find the test data root mean squared error
-
-### New Sample Data Prediction
-
-Include your sample input and output here
-
-## RESULT
